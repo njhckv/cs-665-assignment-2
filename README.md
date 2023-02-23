@@ -1,29 +1,27 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Huanzhou Wang              |
+| Date         | 02/22/2023                 |
+| Course       | Spring                     |
+| Assignment # | Assignment=2               |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+This assignment is to develop a notification system that will inform drivers about delivery requests.
+Upon receiving a product delivery order from a store, a delivery request is generated and sent to all available drivers.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/njhckv/cs-665-assignment-2
 
-# Implementation Description 
-
-
-For each assignment, please answer the following:
-
+# Implementation Description
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+  - I created Publisher and Subscriber interfaces which have some common attributes of Publisher and Subscriber we know. So that we new object types like Coffee shop, Ramen shop or even Youtube channel can implement Publisher Interface. Same for Subscribe.
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+  - My implementation is pretty easy to understand, for example, my Shop class only represents necessary filed, and I can do all delivery actions like push a notification in the class.
 - Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+  - I use Delivery Requests Arraylist only in Driver class instead of both in it and Shop class, because if drivers can track every request can update it to publisher, there's no need for publishers to hold another data structure
 
 
 # Maven Commands
