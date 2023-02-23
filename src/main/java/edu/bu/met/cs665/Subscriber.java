@@ -9,5 +9,5 @@
 package edu.bu.met.cs665;
 
 public interface Subscriber {
-    void getNotification(Shop shop, DeliveryRequest deliveryRequest);
+    public void getNotification(Shop shop, DeliveryRequest deliveryRequest);
 }
