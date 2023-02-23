@@ -1,14 +1,13 @@
 /**
- * Name: FIRST_NAME LAST_NAME
+ * Name: HUANZHOU WANG
  * Course: CS-665 Software Designs & Patterns
- * Date: MM/DD/YYYY
+ * Date: 02/22/2023
  * File Name: Main.java
- * Description: Write a description for this class
+ * Description: In this class I tested broadcast a single Delivery Request and send notifications to all Drivers regarding the delivery.
+ *              I created a shop, 6 drivers, and a delivery request to test it out.
  */
 
 package edu.bu.met.cs665;
-
-import edu.bu.met.cs665.example1.Person;
 
 /**
  * This is the Main class.
@@ -22,17 +21,24 @@ public class Main {
    * However, please note that every assignment/final projects requires JUnit tests.
    */
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
+    Shop ramenShop = new Shop("Ramen Shop","001");
+    Driver driverA = new Driver("Driver A","001",true);
+    Driver driverB = new Driver("Driver B","002",true);
+    Driver driverC = new Driver("Driver C","003",true);
+    Driver driverD = new Driver("Driver D","004",true);
+    Driver driverE = new Driver("Driver E","005",true);
+    Driver driverF = new Driver("Driver F","006",false);
+    DeliveryRequest deliveryRequest = new DeliveryRequest("250","BU CDS");
+    ramenShop.subscribe(driverA);
+    ramenShop.subscribe(driverB);
+    ramenShop.subscribe(driverC);
+    ramenShop.subscribe(driverD);
+    ramenShop.subscribe(driverE);
+    ramenShop.subscribe(driverF);
+    ramenShop.notifySubscribers(deliveryRequest);
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
+
+
   }
 
 }
