@@ -9,13 +9,14 @@
 package edu.bu.met.cs665;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Driver implements Subscriber{
+public class Driver implements Subscriber {
     private final String name;
     private final String id;
     private boolean isAvailable;
 
-    private ArrayList<DeliveryRequest> requestLists = new ArrayList<>();
+    private List<DeliveryRequest> requestLists = new ArrayList<>();
 
     public Driver(String name, String id, boolean isAvailable) {
         this.name = name;
@@ -27,12 +28,17 @@ public class Driver implements Subscriber{
         return isAvailable;
     }
 
-    public ArrayList<DeliveryRequest> getRequestLists() {
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public List<DeliveryRequest> getRequestLists() {
         return requestLists;
     }
+
     @Override
     public void getNotification(Shop shop, DeliveryRequest deliveryRequest) {
         requestLists.add(deliveryRequest);
-        System.out.println(name + " with ID " + id + " got the delivery request " + deliveryRequest.getId() + " from " + shop.getName() +  " to address: " + deliveryRequest.getAddress());
+        System.out.println(name + " with ID " + id + " got the delivery request " + deliveryRequest.getId() + " from " + shop.getName() + " to address: " + deliveryRequest.getAddress());
     }
 }

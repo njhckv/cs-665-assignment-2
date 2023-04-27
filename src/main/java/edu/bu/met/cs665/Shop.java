@@ -8,13 +8,14 @@
 package edu.bu.met.cs665;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Shop implements Publisher{
-
+public class Shop implements Publisher {
     private final String name;
     private final String id;
 
-    private ArrayList<Driver> drivers = new ArrayList<>();
+    private List<Driver> drivers = new CopyOnWriteArrayList<>();
 
     public Shop(String name, String id) {
         this.name = name;
@@ -25,23 +26,23 @@ public class Shop implements Publisher{
         return name;
     }
 
-    public ArrayList<Driver> getDrivers() {
+    public List<Driver> getDrivers() {
         return drivers;
     }
 
     @Override
-    public void subscribe(Driver driver) {
+    public synchronized void subscribe(Driver driver) {
         drivers.add(driver);
     }
 
     @Override
-    public void unsubscribe(Driver driver) {
+    public synchronized void unsubscribe(Driver driver) {
         drivers.remove(driver);
     }
 
     @Override
     public void notifySubscribers(DeliveryRequest deliveryRequest) {
-        for (Driver driver: drivers) {
+        for (Driver driver : drivers) {
             if (driver.isAvailable()) {
                 driver.getNotification(this, deliveryRequest);
             }

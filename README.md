@@ -1,17 +1,22 @@
 
-| CS-665       | Software Design & Patterns |
-|--------------|----------------------------|
-| Name         | Huanzhou Wang              |
-| Date         | 02/22/2023                 |
-| Course       | Spring                     |
-| Assignment # | Assignment=2               |
+| CS-665       | Software Design & Patterns      |
+|--------------|---------------------------------|
+| Name         | Huanzhou Wang                   |
+| Date         | 04/25/2023                      |
+| Course       | Spring                          |
+| Assignment # | Assignment-6 (Assign-2 Revised) |
 
 # Assignment Overview
-This assignment is to develop a notification system that will inform drivers about delivery requests.
-Upon receiving a product delivery order from a store, a delivery request is generated and sent to all available drivers.
+This assignment is to locate and address 3 areas for code improvement in Assignment 2.
+The original assignment is upon receiving a product delivery order from a store, a delivery request is generated and sent to all available drivers.
+
+In this updated code, I have applied the three suggested improvements:
+1. Replaced ArrayList with the List interface for the requestLists and drivers collections.
+2. Changed the drivers collection to use CopyOnWriteArrayList for thread-safe access.
+3. Added the setAvailable method to the Driver class to allow changing a driver's availability.
 
 # GitHub Repository Link:
-https://github.com/njhckv/cs-665-assignment-2
+https://github.com/njhckv/cs-665-assignment-6
 
 # Implementation Description
 - Explain the level of flexibility in your implementation, including how new object types can
